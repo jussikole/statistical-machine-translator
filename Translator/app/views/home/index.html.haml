@@ -1,0 +1,21 @@
+#bar.navbar.navbar-fixed-top.navbar-inverse
+  .navbar-inner
+    %a.brand{href: root_path}
+      Statistical Translator
+    %ul.nav.pull-right
+      %li
+        = select_tag 'lang1', options_for_select(@languages)
+      %li
+        = select_tag 'lang2', options_for_select(@languages, 'en')
+      %li
+        .input-prepend
+          %span.add-on= '&#955;'.html_safe
+          %input{type: :text, id: :lambda, value: '0.1'}
+
+#search
+  .search-components
+    %input#query{type: :text}
+    %button#send
+      Translate
+
+#results
